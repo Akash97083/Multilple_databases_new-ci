@@ -1,0 +1,7 @@
+<?php
+$lang['brick_details'] ="Brick Details";
+$lang['Brick_Name'] ="Brick Name";
+
+
+
+?>
