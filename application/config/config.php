@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/Multilple_databases/';
+$config['base_url'] = 'http://localhost/Multilple_databases_new_new/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ $config['base_url'] = 'http://localhost/Multilple_databases/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -534,19 +534,19 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
- $config['base_url']					      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases/";  //admin root
+ $config['base_url']					      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases_new/";  //admin root
 
-	$config['front_base_url']			      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases/"; // for common download uploaded files & fckeditor
+	$config['front_base_url']			      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases_new/"; // for common download uploaded files & fckeditor
 
-    $config['server_absolute_path'] 	      = $_SERVER['DOCUMENT_ROOT']."/Multilple_databases/"; // site root folder to check file exists in server absolute path or not
+    $config['server_absolute_path'] 	      = $_SERVER['DOCUMENT_ROOT']."/Multilple_databases_new/"; // site root folder to check file exists in server absolute path or not
 
-    $config['file_upload_absolute_path']      = $_SERVER['DOCUMENT_ROOT']."/Multilple_databases/uploads";
+    $config['file_upload_absolute_path']      = $_SERVER['DOCUMENT_ROOT']."/Multilple_databases_new/uploads";
 
 	$config['file_upload_base_url'] 	  	  = $config['front_base_url']."uploads/";
 
-	$config['css_images_js_base_url']	      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases/webadmin/"."public/";
+	$config['css_images_js_base_url']	      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases_new/webadmin/"."public/";
 
-	$config['fckeditor_base_url']		      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases/webadmin/";
+	$config['fckeditor_base_url']		      = "http://".$_SERVER['HTTP_HOST']."/Multilple_databases_new/webadmin/";
 
    date_default_timezone_set("Asia/Kolkata");
    //$timezone = date_default_timezone_get();

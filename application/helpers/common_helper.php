@@ -20,13 +20,22 @@ function checkPIN($section_name)
         }
     }
 
+function checkUserpin($section_name)
+    {
+        $CI = & get_instance();
+        if (!$CI->session->userdata('pin')) {
+
+            $CI->session->set_flashdata('errmsg', 'First Enter Your Pin');
+            redirect('/');
+        }
+    }
 
 function checkUser($section_name)
     {
         $CI = & get_instance();
         if (!$CI->session->userdata('user_email')) {
           $CI->session->set_flashdata('errmsg', 'Login Now');
-            redirect('/');
+            redirect('/login');
         }
     }
 

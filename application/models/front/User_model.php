@@ -83,6 +83,40 @@ function updateUserPass($email,$data)
 		}
  }
 
+function check_pin($data = array()){
+
+    $this->pin    = $data['pin'];
+        $login = false;
+    $query = "SELECT * FROM tbl_db_connection WHERE pin = '".$this->pin."' AND status = 'Active'";
+    
+    $rs = $this->db->query($query);
+    //print_r($rs->num_rows()); exit;
+    if ($rs->num_rows() >0 )
+    {
+      $row = $rs->row();
+      
+      $login = true;      
+    }
+    
+    if($login == true)  {     
+      $this->session->set_userdata('pin_id', $row->id);
+      $this->session->set_userdata('pin', $row->pin);
+      $this->session->set_userdata('admin_type', $row->admin_type);
+      $this->session->set_userdata('project_name', $row->project_name);
+      $this->session->set_userdata('hostname', $row->hostname);
+      $this->session->set_userdata('username', $row->username);
+      $this->session->set_userdata('db_name', $row->db_name);
+      $this->session->set_userdata('password', $row->password);
+      $this->session->set_userdata('status', $row->status);
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+
+
+  }
 ////////////////// End Class /////////////////////
 
 }

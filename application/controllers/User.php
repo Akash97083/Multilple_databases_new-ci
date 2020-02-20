@@ -19,8 +19,39 @@ class User extends CI_Controller {
   public function index()
 	{
     $data=array('errmsg'=>'');
-		$this->load->view('front/index',$data);
+		$this->load->view('front/pin',$data);
 	}
+
+  function do_pin(){
+        $data = array();
+
+        $this->form_validation->set_rules('pin', 'PIN', 'trim|required|xss_clean');
+        $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+
+
+            $data['pin'] = $this->input->post("pin");
+            $check_login = $this->User_model->check_pin($data);
+            //print_r($check_login); exit;
+            if($check_login!='') {
+                redirect(base_url("login/"));
+                
+
+             } else {
+                $this->session->set_flashdata('errmsg', "Invalid Pin Contect Your Administrator.");
+               redirect(base_url("/"));
+                
+
+            }
+    
+        }
+
+
+  public function login()
+  {
+    checkUserpin($this->controller.'/dashboard/');
+    $data=array('errmsg'=>'');
+    $this->load->view('front/index',$data);
+  }
 
   function user_do_login(){
     $data['email'] = $this->input->post("email");
@@ -30,7 +61,7 @@ class User extends CI_Controller {
       redirect(base_url("user/dashboard/"));
     } else {
             $this->session->set_flashdata('errmsg', "Invalid username and/or password.");
-            redirect(base_url($this->controller."/"));
+            redirect(base_url('/login'));
           }
   }
 
