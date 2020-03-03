@@ -18,6 +18,10 @@ class User extends CI_Controller {
 
   public function index()
 	{
+    if($this->session->userdata('pin')!=''){
+      redirect(base_url('/login'));
+    }
+    
     $data=array('errmsg'=>'');
 		$this->load->view('front/pin',$data);
 	}

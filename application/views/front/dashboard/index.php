@@ -10,7 +10,10 @@
       <h1>
         <?php echo $page_title;?>
       </h1>
-      <?php //print_r($this->session->userdata);?>
+
+      <?php //print_r($this->session->userdata);
+      echo $this->db->database;
+      ?>
     </section>
     
   </div>

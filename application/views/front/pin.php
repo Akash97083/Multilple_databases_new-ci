@@ -46,6 +46,9 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
+    <?php //print_r($this->session->userdata);
+      echo $this->db->database.'<br>';
+      ?>
 
 
     <?php if($this->session->flashdata('errmsg')){?>
