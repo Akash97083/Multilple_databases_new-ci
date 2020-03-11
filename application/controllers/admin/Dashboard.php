@@ -112,6 +112,10 @@ class Dashboard extends CI_Controller {
 		}
 	}
 
+ function profile(){
+ 	$this->load->view('admin/dashboard/profile');
+ }
+
 ////////////////// End Class /////////////////////
 
 }

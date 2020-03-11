@@ -6,6 +6,10 @@
         <li class="treeview <?php if($this->uri->segment(2) == '' || $this->uri->segment(2) == 'dashboard'){ ?>active<?php } ?>">
           <a href="<?php echo base_url('admin/dashboard'); ?>">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+                <small class="label pull-right bg-red">3</small>
+                <small class="label pull-right bg-blue">17</small>
+            </span>
           </a>
         </li>
         <?php if($this->session->userdata('user_group') =='1'){
@@ -15,6 +19,13 @@
             <i class="fa fa-shopping-cart"></i> <span>Manage Company</span>
           </a>
          </li>
+
+        <li class="treeview <?php if($this->uri->segment(2) == '' || $this->uri->segment(2) == 'company'){ ?>active<?php } ?>">
+        <a href="<?php echo base_url('admin/dashboard/profile'); ?>">
+        <i class="fa fa-shopping-cart"></i> <span>User Profile</span>
+        </a>
+        </li>
+
        <?php } ?>
 
          <?php if($this->session->userdata('admin_type') =='Super-admin'){?>
