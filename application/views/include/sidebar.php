@@ -12,6 +12,13 @@
             </span>
           </a>
         </li>
+
+        <li class="treeview <?php if($this->uri->segment(2) == '' || $this->uri->segment(2) == 'dashboard'){ ?>active<?php } ?>">
+          <a href="<?php echo base_url('admin/dashboard/profile'); ?>">
+            <i class="fa fa-shopping-cart"></i> <span>Manage Profile</span>
+          </a>
+         </li>
+
         <?php if($this->session->userdata('user_group') =='1'){
           if($this->session->userdata('admin_type') !='Super-admin'){?>
             <li class="treeview <?php if($this->uri->segment(2) == '' || $this->uri->segment(2) == 'company'){ ?>active<?php } ?>">
